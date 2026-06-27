@@ -2,91 +2,93 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Disha Vacations | AI Travel Planner</title>
-    
-    <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
-    <script src="https://files.bpcontent.cloud/2026/02/21/15/20260221154024-7WZHSUZ6.js" defer></script>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disha Vacations | Your AI Travel Partner</title>
     <style>
-        body, html {
+        /* Reset and layout base optimization */
+        html, body {
             margin: 0;
             padding: 0;
             height: 100%;
-            width: 100%;
-            /* This allows the page itself to scroll if the bot expands */
-            overflow-y: auto !important; 
-            background-color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            overflow: hidden; /* Prevents double scrollbars when the iframe loads */
+            background-color: #f5f7fa; /* Matches Dify's clean app canvas */
+            display: flex;
+            flex-direction: column;
         }
 
-        /* Matches the ID in your "Where to show chat" settings */
-        #bp-embedded-webchat {
+        /* Elegant branding top bar */
+        .header-bar {
+            background-color: #0d1b2a; /* Deep, professional travel blue */
+            color: #ffffff;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            z-index: 10;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .brand-logo span {
+            color: #e0a96d; /* Warm vacation accent gold */
+        }
+
+        .status-badge {
+            background-color: rgba(224, 169, 109, 0.2);
+            border: 1px solid #e0a96d;
+            color: #e0a96d;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* Full-screen iframe container panel */
+        .iframe-container {
+            flex-grow: 1;
             width: 100%;
-            height: 100vh;
-            display: block;
+            height: 100%;
+            position: relative;
+        }
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
         }
     </style>
-
-<!-- In your <head> tag -->
-<script src="https://cdn.botpress.cloud/desk/webchat/v3.4/inject.js"></script>
-<style>
-  #webchat .bpWebchat {
-    position: unset;
-    width: 100%;
-    height: 100%;
-    max-height: 100%;
-    max-width: 100%;
-  }
-
-  #webchat .bpFab {
-    display: none;
-  }
-</style>
-
-<!-- Put this on your page BEFORE the script below -->
-<div id="webchat" style="width: 500px; height: 500px;"></div>
-
-<!-- In your <body> tag -->
-<script>
-  window.botpress.on("webchat:ready", () => {
-    window.botpress.open();
-  });
-  window.botpress.init({
-  "botId": "49165123-5810-4ed6-8326-a302859ce537",
-  "configuration": {
-    "version": "v1",
-    "website": {},
-    "email": {},
-    "phone": {},
-    "termsOfService": {},
-    "privacyPolicy": {},
-    "color": "#3276EA",
-    "variant": "solid",
-    "headerVariant": "glass",
-    "themeMode": "light",
-    "fontFamily": "inter",
-    "radius": 4,
-    "feedbackEnabled": false,
-    "footer": "[⚡ by Botpress](https://botpress.com/?from=webchat)"
-  },
-  "clientId": "896515a3-b530-4f8c-a516-c1c5062c6242",
-  "selector": "#webchat"
-});
-</script>
-    
 </head>
 <body>
-   /* <div id="bp-embedded-webchat"></div> */
-    /* <div id="webchat"></div> */
-    <div id="webchat" style="width: 100%; height: 100vh;"></div>
 
-    <script>
-        window.botpress.on('webchat:initialized', () => {
-            window.botpress.open();
-        });
-    </script>
+    <header class="header-bar">
+        <div class="brand-logo">
+            🌐 Disha<span>Vacations</span>
+        </div>
+        <div class="status-badge">
+            AI Planner Online
+        </div>
+    </header>
+
+    <main class="iframe-container">
+        <iframe
+            src="https://ai.disha.vacations/chatbot/Bepp78wAVL6pDfHu"
+            allow="microphone; clipboard-write"
+            title="Disha Vacations AI Assistant">
+        </iframe>
+    </main>
+
 </body>
-
 </html>
-
-
